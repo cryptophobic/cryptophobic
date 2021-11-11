@@ -10,12 +10,11 @@
 
 void Init::init() {
     Render renderer{Render::DEFAULT_SCREEN_WIDTH, Render::DEFAULT_SCREEN_HEIGHT};
-    Square square{0, 0, 40, 40};
+    Square square {0, 0, 40, 40};
     Keys keysHandler;
     int speed = 1;
 
     LTimer capTimer;
-    int countedFrames = 0;
 
     LTimer squareTimer;
 
