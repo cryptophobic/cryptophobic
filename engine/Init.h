@@ -11,10 +11,12 @@ const int SCREEN_TICK_PER_FRAME = 1000 / SCREEN_FPS;
 
 const int SQUARE_SPEED = 1000 / 500;
 
-class Init {
-public:
-    static void init();
-};
+namespace client {
+    class Init {
+    public:
+        static void init();
+    };
+}
 
 
 #endif //SDL_PROJECT_INIT_H
