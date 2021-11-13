@@ -6,7 +6,7 @@
 #include <SDL2/SDL.h>
 #include <stdexcept>
 
-Render::~Render() {
+client::Render::~Render() {
     SDL_DestroyRenderer(renderer);
     SDL_DestroyWindow(window);
     window = nullptr;
@@ -15,7 +15,7 @@ Render::~Render() {
     SDL_Quit();
 }
 
-void Render::init() {
+void client::Render::init() {
 
     if (initialized) {
         return;
@@ -52,7 +52,7 @@ void Render::init() {
     initialized = true;
 }
 
-void Render::renderSquare(Square *square) {
+void client::Render::renderSquare(Square *square) {
     init();
     //Clear screen
     SDL_SetRenderDrawColor(renderer, 0xFF, 0xFF, 0xFF, 0xFF);
@@ -67,12 +67,12 @@ void Render::renderSquare(Square *square) {
     SDL_RenderPresent(renderer);
 }
 
-int Render::getScreenWidth() const {
+int client::Render::getScreenWidth() const {
     return screenWidth;
 }
 
-int Render::getScreenHeight() const {
+int client::Render::getScreenHeight() const {
     return screenHeight;
 }
 
-Render::Render(int w, int h) : screenWidth {w}, screenHeight {h} {}
+client::Render::Render(int w, int h) : screenWidth {w}, screenHeight {h} {}

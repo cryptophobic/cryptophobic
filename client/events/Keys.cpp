@@ -5,7 +5,7 @@
 #include <SDL2/SDL.h>
 #include "Keys.h"
 
-unsigned Keys::getKey() {
+unsigned client::Keys::getKey() {
     //Event handler
     SDL_Event e;
 

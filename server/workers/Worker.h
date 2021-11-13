@@ -7,7 +7,7 @@
 
 
 class Worker {
-
+    static void run();
 };
 
 

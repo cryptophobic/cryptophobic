@@ -4,16 +4,16 @@
 
 #include "State.h"
 
-unsigned State::putObject(Object *object) {
+unsigned client::State::putObject(Object *object) {
     objects.push_back(object);
     return objects.size() - 1;
 }
 
-Object *State::getObject(unsigned int objectId) {
+Object *client::State::getObject(unsigned int objectId) {
     return objects[objectId];
 }
 
-std::string State::getObjectsSerialized() {
+std::string client::State::getObjectsSerialized() {
     std::string serialized;
     for (Object* object : objects) {
         serialized += std::to_string(object->xAxis) + ","
@@ -24,6 +24,6 @@ std::string State::getObjectsSerialized() {
     return serialized;
 }
 
-std::vector<Object *>* State::getObjects() {
+std::vector<Object *>* client::State::getObjects() {
     return &objects;
 }

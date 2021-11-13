@@ -4,11 +4,11 @@
 
 #include "ServerProxy.h"
 
-void ServerProxy::getAndUpdateState() {
+void client::ServerProxy::getAndUpdateState() {
 
 }
 
-void ServerProxy::put(std::string) {
+void client::ServerProxy::put(std::string) {
     std::string serialized;
     for (Object *object: *statePtr->getObjects()) {
         serialized += std::to_string(object->xAxis) + ","
@@ -18,6 +18,6 @@ void ServerProxy::put(std::string) {
     }
 }
 
-ServerProxy::ServerProxy(State *newStatePtr) {
+client::ServerProxy::ServerProxy(State *newStatePtr) {
     statePtr = newStatePtr;
 }

@@ -2,10 +2,10 @@
 // Created by dima on 11.11.21.
 //
 
-#include "../render/SDL/Render.h"
-#include "../objects/Square.h"
+#include "../../shared/objects/Square.h"
 #include "../events/Keys.h"
-#include "../timer/LTimer.h"
+#include "../../shared/timer/LTimer.h"
+#include "../render/SDL/Render.h"
 #include "Init.h"
 
 void client::Init::init() {
