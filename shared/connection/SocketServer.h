@@ -9,13 +9,14 @@ class SocketServer {
 public:
     SocketServer(int);
     ~SocketServer();
-private:
-    unsigned port = 9990;
-    int socketId;
-    int connection;
-    void connect();
     std::string read();
     void write(const std::string&);
+
+private:
+    unsigned port = 9990;
+    int socketId = 0;
+    int connection = 0;
+    void connect();
 };
 
 

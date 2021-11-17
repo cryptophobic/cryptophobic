@@ -10,6 +10,9 @@
 #include "SocketServer.h"
 
 void SocketServer::connect() {
+    if (connection > 0 && socketId > 0) {
+        return;
+    }
     socketId = socket(AF_INET, SOCK_STREAM, 0);
     if (socketId == -1) {
         throw std::runtime_error(std::string("Failed to create socket. errno: ") + std::to_string(errno));
@@ -53,6 +56,7 @@ SocketServer::~SocketServer() {
 }
 
 std::string SocketServer::read() {
+    connect();
     char buffer[100];
     auto bytesRead = ::read(connection, buffer, 100);
     //std::cout << "The message was: " << buffer << " bytes read " << bytesRead << std::endl;
@@ -61,5 +65,6 @@ std::string SocketServer::read() {
 }
 
 void SocketServer::write(const std::string& response) {
+    connect();
     send(connection, response.c_str(), response.size(), 0);
 }
